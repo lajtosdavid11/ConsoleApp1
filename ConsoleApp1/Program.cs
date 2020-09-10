@@ -86,6 +86,12 @@ namespace ismetles01
                 "Játékos győzelmek {1}"+
                 "Gép győzelem {2}",menet,jatekosNyer,gepNyer);
 
+            StreamWriter sw = new StreamWriter("Statisztika.txt");
+            sw.WriteLine(menet+";");
+            sw.WriteLine(jatekosNyer + ";");
+            sw.WriteLine(gepNyer + ";");
+
+
         }
 
          private static void statisztikafajlbol()
@@ -111,6 +117,7 @@ namespace ismetles01
         }
 
 
+        
 
     static void Main(string[] args)   
         {
