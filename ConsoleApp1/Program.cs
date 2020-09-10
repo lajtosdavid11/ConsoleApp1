@@ -8,6 +8,10 @@ namespace ismetles01
     class Program
     {
         static string[] lehetoseg = new string[] { "Kő", "Papír", "Olló" };
+        static int gepNyer = 0;
+        static int jatekosNyer = 0;
+        static int menet = 0;
+
         static int GepValasztas()
         {
             Random vel = new Random();
@@ -18,6 +22,7 @@ namespace ismetles01
             Console.WriteLine("Kő (0), Papír (1), Olló (2)");
             Console.Write("Válasz: ");
             return Convert.ToInt32(Console.ReadLine());
+
         }
         static void EredmenyKiiras(int gep, int ember)
         {
@@ -39,20 +44,67 @@ namespace ismetles01
         {
             if (gep == 0 && ember == 1 || gep == 1 && ember == 2 || gep == 2 && ember == 0)
             {
+                jatekosNyer++;
                 return 2;
+                
             }
             else if (gep == ember)
             {
                 return 0;
             }
-            else return 1;
+            
+            else gepNyer++;
+            return 1;
+            
+                
+            
+            
+
         }
-        static void Main(string[] args)
+
+        private static bool akarJatszani()
         {
+            Console.WriteLine("-----");
+            Console.Write("Igen/nem:");
+            string valasz = Console.ReadLine().ToLower();
+            Console.WriteLine("\n---------");
+            if (valasz == "i")
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+
+        private static void statisztika()
+        {
+            Console.WriteLine("\t Menetek száma: {0}"+
+                "Játékos győzelmek {1}"+
+                "Gép győzelem {2}",menet,jatekosNyer,gepNyer);
+
+        }
+
+
+
+    static void Main(string[] args)   
+        {
+            bool tovabb = true;
+            while (tovabb)
+            {
+             menet++;
             int jatekosValasz = JatekosValasztas();
             int gepValasz = GepValasztas();
-            EredmenyKiiras(gepValasz, jatekosValasz);
+            EredmenyKiiras(gepValasz, jatekosValasz); 
+
+            }
+            
             Console.ReadKey();
+
+            
         }
-    }
+        
+}
 }
