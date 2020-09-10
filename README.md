@@ -25,3 +25,13 @@ Visszaadott érték = 0, 1, 2
 [] Addig játszunk míg ki nem lépünk a jatékból
 
 - Statisztika:
+
+[] Eredmények fájlba írása és megjelenítése
+
+-1 érték: ->menet
+
+-2 érték-> játékos
+
+-3 érték ->gép
+
+ -értékek ';' elválasztva
